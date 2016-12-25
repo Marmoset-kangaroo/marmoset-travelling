@@ -19,13 +19,13 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_62uolnszdytp:
+                    vflm_iys77pei574o:
                         id: machine1
                         hostname: machine1.puphpet
                         network:
                             private_network: 192.168.56.101
                             forwarded_port:
-                                vflmnfp_siql5yucigeo:
+                                vflmnfp_e3avf9so60cl:
                                     host: '7057'
                                     guest: '22'
                         memory: '1024'
@@ -40,7 +40,7 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_3r7rcp03m046:
+            vflsf_q4bivtz15rg3:
                 source: ./
                 target: /var/www
                 sync_type: default
@@ -84,7 +84,6 @@ vagrantfile:
         https: ''
         ftp: ''
         no_proxy: ''
-        enabled: '0'
 server:
     install: '1'
     packages: {  }
@@ -119,7 +118,7 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_0l1yncnrkr5h:
+        nxv_rnti1xpm6m1c:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -135,7 +134,7 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_0mxrp01vq6lj:
+                nxvl_k5surq2ie54b:
                     www_root: ''
                     location: /
                     index_files:
@@ -151,7 +150,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_i8plkitju4k7:
+                nxvl_zpwqr5osapzx:
                     www_root: ''
                     location: '~ \.php$'
                     try_files:
@@ -183,11 +182,11 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_lxgiz44jh85a:
+        av_bmaioyi4v3q3:
             servername: marmoset.dev
             serveraliases:
                 - www.marmoset.dev
-            docroot: /var/www/marmoset
+            docroot: /var/www/marmoset/public
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -202,8 +201,8 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_ciptsiizzt0c:
-                    path: /var/www/marmoset
+                avd_shy8y12p63zu:
+                    path: /var/www/marmoset/public
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -214,7 +213,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_6f5teswlb8mu:
+                        avdfm_n4nqzu7gbfp0:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -244,7 +243,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_hcf8n6ka75v8:
+        phpfp_0vc814ky29xf:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -318,15 +317,15 @@ mariadb:
         override_options: {  }
     adminer: 0
     users:
-        mariadbnu_29169lq00i8o:
+        mariadbnu_6cxgzp8c3e48:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_m4ts0zzh097v:
+        mariadbnd_ffoqb4tyw6bu:
             name: dbname
             sql: ''
     grants:
-        mariadbng_2cro9hwh9l2i:
+        mariadbng_l2tlx1tgzk1h:
             user: dbuser
             table: '*.*'
             privileges:
@@ -339,15 +338,15 @@ mysql:
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_lpvd6aqximlk:
+        mysqlnu_azoc3bvn61fc:
             name: dbuser
             password: '123'
     databases:
-        mysqlnd_5vldsy0bu3yi:
+        mysqlnd_67ij0g068zql:
             name: dbname
             sql: ''
     grants:
-        mysqlng_01k7hiygzale:
+        mysqlng_u8mvi9xkqqre:
             user: dbuser
             table: '*.*'
             privileges:
@@ -412,7 +411,7 @@ elastic_search:
         version: 2.3.1
         java_install: true
     instances:
-        esi_m6hgayyrjee6:
+        esi_z0f84bt3e0bt:
             name: es-01
 solr:
     install: '0'

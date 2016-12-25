@@ -1,0 +1,20 @@
+{
+
+    "require": {
+        "guzzlehttp/guzzle": "*",
+        "monolog/monolog": "*",
+        "symfony/http-foundation": "^3.1",
+        "symfony/http-kernel": "^3.1",
+        "symfony/routing": "^3.1",
+        "doctrine/orm": "^2.5",
+        "twig/twig": "~1.0",
+        "swiftmailer/swiftmailer": "@stable"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "App"
+        }
+    }
+
+}
