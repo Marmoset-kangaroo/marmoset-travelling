@@ -20,10 +20,10 @@
         var world_geometry = new.google.maps.FusionTableLayer({
         query: {
             select: 'geometry',
-            from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk'
+            from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk',
+            where: "ISO_2DIGIT IN ('UA', 'NO', 'DE', 'FI', 'GE', 'SK', 'IT', 'ES', 'FR', 'DK', 'LV', 'LT',
+                                           'EST', 'PL', 'AD', 'FO', 'ME', 'CZ', 'AT', 'BE', 'BY', 'NL')"
             },
-        where: "ISO_2DIGIT IN ('UA', 'NO', 'DE', 'FI', 'GE', 'SK', 'IT', 'ES', 'FR', 'DK', 'LV', 'LT',
-                               'EST', 'PL', 'AD', 'FO', 'ME', 'CZ', 'AT', 'BE', 'BY', 'NL')"
         map: map,
         suppressInfoWindows: true
         });
