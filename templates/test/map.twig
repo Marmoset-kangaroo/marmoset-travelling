@@ -17,16 +17,30 @@
             zoom: 2
         });
 
-        var world_geometry = new.google.maps.FusionTableLayer({
-        query: {
-            select: 'geometry',
-            from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk',
-            where: "ISO_2DIGIT IN ('UA', 'NO', 'DE', 'FI', 'GE', 'SK', 'IT', 'ES', 'FR', 'DK', 'LV', 'LT',
-                                           'EST', 'PL', 'AD', 'FO', 'ME', 'CZ', 'AT', 'BE', 'BY', 'NL')"
+        var visitedCountries = ['UA', 'NO', 'DE', 'FI', 'GE', 'SK', 'IT', 'ES', 'FR', 'DK', 'LV', 'LT',
+                'EST', 'PL', 'AD', 'FO', 'ME', 'CZ', 'AT', 'BE', 'BY', 'NL'],
+            cond = "ISO_2DIGIT IN ('" + visitedCountries.join("', '")+ "')",
+            layer = new google.maps.FusionTablesLayer({
+            query: {
+                select: 'geometry',
+                from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk'
             },
-        map: map,
-        suppressInfoWindows: true
+            styles: [{
+                //basic gray layout for all countries
+                polygonOptions: {
+                    fillColor: '#aeabb2',
+                    fillOpacity: 0.5
+                }
+            }, {
+                //visited countries
+                where: cond,
+                polygonOptions: {
+                    fillColor: '#f3cf1a'
+                }
+            }]
         });
+
+       layer.setMap(map);
     }
 
 </script>
